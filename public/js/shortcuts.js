@@ -11,7 +11,7 @@ function add() {
             shortcut.className = 'circle-container';
 
             const shortcutLink = document.createElement('a');
-            shortcutLink.href = `/static/embed.html#${encodeURIComponent(link)}`;
+            shortcutLink.href = `/embed.html#${encodeURIComponent(link)}`;
             shortcutLink.className = 'circle';
 
             const img = document.createElement('img');
@@ -62,7 +62,7 @@ function add() {
                 shortcutElement.className = 'circle-container';
 
                 const shortcutLink = document.createElement('a');
-                shortcutLink.href = `/static/embed.html#${encodeURIComponent(shortcut.link)}`;
+                shortcutLink.href = `/embed.html#${encodeURIComponent(shortcut.link)}`;
                 shortcutLink.className = 'circle';
 
                 const imgElement = document.createElement('img');
