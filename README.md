@@ -1,6 +1,6 @@
 <p align="center">
   <kbd>
-    <img src="/images/plexilearcade.png" alt="PLEXILE ARCADE" style="border-radius: 50%; height: 150px;">
+    <img src="/public/images/plexilearcade.png" alt="PLEXILE ARCADE" style="border-radius: 50%; height: 150px;">
   </kbd>
 </p>
 
@@ -12,7 +12,7 @@
 
 **PLEXILE ARCADE** is a Unblocked Game Website with Games, Apps, & A Proxy. It is Developed and Owned by [PLEXILE Network](https://github.com/PLEXILENetwork).
 
-![PLEXILE ARCADE Demo](/images/PLEXILEARCADE.gif)
+![PLEXILE ARCADE Demo](/public/images/PLEXILEARCADE.gif)
 
 ## Hosting
 
