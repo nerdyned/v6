@@ -17,7 +17,7 @@
 ## Hosting
 
 > [!IMPORTANT]  
-> PLEXILE ARCADE uses Static Hosting, which may not be compatible with all hosting providers.
+> PLEXILE ARCADE uses an Unblocker, which may not be compatible with all hosting providers.
 
 Deploy PLEXILE ARCADE with your preferred platform:
 
