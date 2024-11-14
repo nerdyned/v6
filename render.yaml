@@ -1,0 +1,11 @@
+services:
+- type: web
+  name: plexilearcade
+  runtime: node
+  repo: https://github.com/willoo0/v6/
+  plan: free
+  region: oregon
+  buildCommand: npm i
+  startCommand: node index.js
+  rootDir: .
+version: "1"
