@@ -1,7 +1,7 @@
 
 <p align="center">
 <kbd>
-<img style="border-radius:50%" height="150px" src="/images/plexilearcade.png">
+<img style="border-radius:50%" height="150px" src="/public/images/plexilearcade.png">
 </kbd>
 </p>
 <h1 align="center" style="color: #b03232;">PLEXILE ARCADE | Credits</h1>
