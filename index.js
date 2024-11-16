@@ -38,9 +38,6 @@ app.use((req, res) => {
 
 const port = 2100;
 
-httpServer.on("listening", () => {
-  console.log(`HTTP server listening`);
-  console.log(`View your server at http://localhost:${port}`);
-});
-
-httpServer.listen({ port: port });
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
