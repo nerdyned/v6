@@ -1,7 +1,7 @@
-const http = require("node:http");
-const { createBareServer } = require("@tomphttp/bare-server-node");
-const express = require("express");
-const sqlite = require("sqlite3").verbose();
+import http from "node:http";
+import { createBareServer } from "@tomphttp/bare-server-node";
+import express from "express"
+import sqlite3 from "sqlite3";
 const app = express();
 const __dirname = process.cwd();
 
