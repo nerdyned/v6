@@ -1,14 +1,59 @@
-const http = require('node:http')
-const { createBareServer } = require('@tomphttp/bare-server-node')
-const express = require('express');
-const sqlite = require('sqlite3').verbose();
+const http = require("node:http");
+const { createBareServer } = require("@tomphttp/bare-server-node");
+const express = require("express");
+const sqlite = require("sqlite3").verbose();
 const app = express();
+const __dirname = process.cwd();
 
-app.use(express.json())
+app.use(express.json());
 
 app.use(express.urlencoded({ extended: false }));
 
-app.use(express.static('public'));
+app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.sendFile("/public/index.html", { root: __dirname });
+});
+
+app.get("/games/", (req, res) => {
+  res.sendFile("/public/games.html", { root: __dirname });
+});
+
+app.get("/apps/", (req, res) => {
+  res.sendFile("/public/apps.html", { root: __dirname });
+});
+
+app.get("/search/", (req, res) => {
+  res.sendFile("/public/search.html", { root: __dirname });
+});
+
+app.get("/proxy/", (req, res) => {
+  res.sendFile("/public/proxy.html", { root: __dirname });
+});
+
+app.get("/links/", (req, res) => {
+  res.sendFile("/public/links.html", { root: __dirname });
+});
+
+app.get("/settings/", (req, res) => {
+  res.sendFile("/public/settings.html", { root: __dirname });
+});
+
+app.get("/embed/", (req, res) => {
+  res.sendFile("/public/embed.html", { root: __dirname });
+});
+
+app.get("/termsofservice/", (req, res) => {
+  res.sendFile("/public/termsofservice.html", { root: __dirname });
+});
+
+app.get("/privacypolicy/", (req, res) => {
+  res.sendFile("/public/privacypolicy.html", { root: __dirname });
+});
+
+app.get('*', function(req, res){
+  res.sendFile("/public/404.html", { root: __dirname });
+});
 
 const httpServer = http.createServer();
 const bareServer = createBareServer("/bare/");
