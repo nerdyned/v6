@@ -4,7 +4,7 @@
   "description": "The Generation Of Unblocked Games..",
   "main": "index.js",
   "scripts": {
-    "start": "node --input-type commonjs index.js",
+    "start": "node index.js",
     "setup": "rm -rf node_modules && npm install",
     "plexilearcadesetup": "npm i"
   },
