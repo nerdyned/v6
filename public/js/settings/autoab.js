@@ -21,7 +21,7 @@
         
         aboutBlankOpened = true;
 
-        window.open("https://www.google.com/search?q=School&oq=School+&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDsyBggDEEUYPDIGCAQQRRg8MgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEIMjcwNGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8", "_blank");
+        window.open("https://mail.google.com", "_blank");
 
         const popup = open("about:blank", "_blank");
         if (!popup || popup.closed) {
