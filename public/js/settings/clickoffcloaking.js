@@ -1,67 +1,36 @@
-let isTitleAndFaviconEnabled = JSON.parse(localStorage.getItem('titleAndFaviconEnabled')) ?? false;
+let isClickoffCloakingEnabled = JSON.parse(localStorage.getItem('clickoffCloaking')) ?? false;
 
 const originalTitle = document.title;
 const originalFavicon = getFavicon();
 
-document.getElementById('toggleTitleAndFavicon').checked = isTitleAndFaviconEnabled;
-
-document.getElementById('toggleTitleAndFavicon').addEventListener('change', function () {
-    isTitleAndFaviconEnabled = this.checked;
-    localStorage.setItem('titleAndFaviconEnabled', JSON.stringify(isTitleAndFaviconEnabled));
-
-    if (isTitleAndFaviconEnabled) {
-        alert('Title & Favicon should now change when the tab is switched..');
-    } else {
-        alert('Clickoff Cloaking disabled..');
+document.addEventListener('visibilitychange', () => {
+    if (isClickoffCloakingEnabled && document.hidden) {
+        document.title = 'Google Slides';
+        updateFavicon('/images/settings-images/googleslides.ico');
+    } else if (isClickoffCloakingEnabled) {
         resetTitleAndFavicon();
     }
 });
 
-document.addEventListener('visibilitychange', function () {
-    if (isTitleAndFaviconEnabled) {
-        if (document.hidden) {
-            
-            document.title = 'Google Slides';
-            changeFavicon('/images/settings-images/googleslides.ico');
-        } else {
-           
-            resetTitleAndFavicon();
-        }
-    }
-});
-
-window.addEventListener('blur', function () {
-    if (isTitleAndFaviconEnabled) {
-        document.title = 'Google Slides';
-        changeFavicon('/images/settings-images/googleslides.ico');
-    }
-});
-
-window.addEventListener('focus', function () {
+window.addEventListener('focus', () => {
     if (!document.hidden) {
         resetTitleAndFavicon();
     }
 });
 
+document.getElementById('toggleClickoffCloaking')?.addEventListener('change', (e) => {
+    isClickoffCloakingEnabled = e.target.checked;
+    localStorage.setItem('clickoffCloaking', JSON.stringify(isClickoffCloakingEnabled));
+
+    alert(isClickoffCloakingEnabled ? 'Clickoff Cloaking enabled.' : 'Clickoff Cloaking disabled.');
+});
+
 function resetTitleAndFavicon() {
     document.title = originalTitle;
-    changeFavicon(originalFavicon);
+    updateFavicon(originalFavicon);
 }
 
 function getFavicon() {
-    const favicon = document.querySelector('link[rel="icon"]');
-    return favicon ? favicon.href : '';
-}
-
-function changeFavicon(url) {
-    let favicon = document.querySelector('link[rel="icon"]');
-
-    if (favicon) {
-        favicon.href = url;
-    } else {
-        favicon = document.createElement('link');
-        favicon.rel = 'icon';
-        favicon.href = url;
-        document.head.appendChild(favicon);
-    }
+    const faviconLink = document.querySelector("link[rel*='icon']");
+    return faviconLink ? faviconLink.href : '/plexilearcade.png';
 }
