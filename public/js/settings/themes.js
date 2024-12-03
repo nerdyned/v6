@@ -1,19 +1,25 @@
- const canvas = document.createElement("canvas");
+        const canvas = document.createElement("canvas");
         canvas.id = "snowCanvas";
         document.body.appendChild(canvas);
 
-        canvas.style.position = "fixed";
-        canvas.style.top = "0";
-        canvas.style.left = "0";
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
-        canvas.style.zIndex = "-1"; 
-        canvas.style.pointerEvents = "none"; 
+        const canvasStyle = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Place above background but below content */
+            pointer-events: none; /* Allow clicks through the canvas */
+        `;
+        canvas.setAttribute("style", canvasStyle);
 
         const ctx = canvas.getContext("2d");
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
 
         const snowflakes = [];
 
@@ -23,12 +29,12 @@
             }
 
             reset() {
-                this.x = Math.random() * canvas.width;
+                this.x = Math.random() * canvas.width; 
                 this.y = Math.random() * canvas.height; 
-                this.radius = Math.random() * 3 + 1;
+                this.radius = Math.random() * 3 + 1; 
                 this.speed = Math.random() * 2 + 1; 
                 this.opacity = Math.random(); 
-                this.wind = (Math.random() - 0.5) * 0.5; 
+                this.wind = (Math.random() - 0.5) * 0.5;
             }
 
             update() {
@@ -67,7 +73,13 @@
 
         animate();
 
-        window.addEventListener("resize", () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+        window.addEventListener("resize", resizeCanvas);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const bodyStyle = `
+                position: relative;
+                background: #111111; 
+                overflow: hidden; 
+            `;
+            document.body.setAttribute("style", bodyStyle);
         });
