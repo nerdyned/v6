@@ -77,7 +77,6 @@ window.addEventListener("resize", resizeCanvas);
 
 document.addEventListener("DOMContentLoaded", () => {
     const bodyStyle = `
-        position: relative;
         color: #fff; 
         overflow: auto;
     `;
