@@ -34,7 +34,7 @@ Deploy PLEXILE ARCADE with your preferred platform:
 
 ## Terms of Service
 
-It is important to understand the PLEXILE ARCADE Terms of Service to avoid any violations. You can view the TOS [here](./tos.html).
+It is important to understand the PLEXILE ARCADE Terms of Service to avoid any violations. You can view the TOS [here](https://plexilearcade.xyz/termsofservice.html).
 
 ## License
 
