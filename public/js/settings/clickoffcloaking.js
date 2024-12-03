@@ -1,40 +1,47 @@
-let isTitleAndFaviconEnabled = JSON.parse(localStorage.getItem('titleAndFaviconEnabled'));
+let isTitleAndFaviconEnabled = JSON.parse(localStorage.getItem('titleAndFaviconEnabled')) ?? false;
 
-if (isTitleAndFaviconEnabled === null) {
-    isTitleAndFaviconEnabled = false;
-}
+const originalTitle = document.title;
+const originalFavicon = getFavicon();
 
-let originalTitle = document.title;
-let originalFavicon = getFavicon();
-
-document.addEventListener('visibilitychange', function() {
-    if (isTitleAndFaviconEnabled && document.hidden) {
-        document.title = 'Google Slides';
-        changeFavicon('/images/settings-images/googleslides.ico');
-    } else if (!isTitleAndFaviconEnabled && !document.hidden) {
-        resetTitleAndFavicon();
-    }
-}, false);
-
-document.addEventListener('focus', function() {
-    if (!isTitleAndFaviconEnabled) {
-        resetTitleAndFavicon();
-    }
-}, false);
+document.getElementById('toggleTitleAndFavicon').checked = isTitleAndFaviconEnabled;
 
 document.getElementById('toggleTitleAndFavicon').addEventListener('change', function () {
-    isTitleAndFaviconEnabled = !isTitleAndFaviconEnabled;
+    isTitleAndFaviconEnabled = this.checked;
     localStorage.setItem('titleAndFaviconEnabled', JSON.stringify(isTitleAndFaviconEnabled));
 
     if (isTitleAndFaviconEnabled) {
-        alert('Title and Favicon will now change when the tab is switched.');
+        alert('Title & Favicon should now change when the tab is switched..');
     } else {
-        alert('Clickoff Cloaking disabled');
+        alert('Clickoff Cloaking disabled..');
         resetTitleAndFavicon();
     }
 });
 
-document.getElementById('toggleTitleAndFavicon').checked = isTitleAndFaviconEnabled;
+document.addEventListener('visibilitychange', function () {
+    if (isTitleAndFaviconEnabled) {
+        if (document.hidden) {
+            
+            document.title = 'Google Slides';
+            changeFavicon('/images/settings-images/googleslides.ico');
+        } else {
+           
+            resetTitleAndFavicon();
+        }
+    }
+});
+
+window.addEventListener('blur', function () {
+    if (isTitleAndFaviconEnabled) {
+        document.title = 'Google Slides';
+        changeFavicon('/images/settings-images/googleslides.ico');
+    }
+});
+
+window.addEventListener('focus', function () {
+    if (!document.hidden) {
+        resetTitleAndFavicon();
+    }
+});
 
 function resetTitleAndFavicon() {
     document.title = originalTitle;
@@ -47,14 +54,14 @@ function getFavicon() {
 }
 
 function changeFavicon(url) {
-    const favicon = document.querySelector('link[rel="icon"]');
+    let favicon = document.querySelector('link[rel="icon"]');
 
     if (favicon) {
         favicon.href = url;
     } else {
-        const newFavicon = document.createElement('link');
-        newFavicon.rel = 'icon';
-        newFavicon.href = url;
-        document.head.appendChild(newFavicon);
+        favicon = document.createElement('link');
+        favicon.rel = 'icon';
+        favicon.href = url;
+        document.head.appendChild(favicon);
     }
 }
