@@ -1,3 +1,4 @@
+// DO NOT Use My Bare
 self.__uv$config = {
     prefix: '/static/pa/',
     bare: '/bare/',
