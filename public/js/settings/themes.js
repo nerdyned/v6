@@ -78,7 +78,7 @@
     document.addEventListener("DOMContentLoaded", () => {
         const bodyStyle = `
             position: relative;
-            background: #111111; 
+            background: #0F0F0F; 
             overflow: auto; 
             z-index: 1; 
         `;
