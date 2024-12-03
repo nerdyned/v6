@@ -1,4 +1,4 @@
-        const canvas = document.createElement("canvas");
+ const canvas = document.createElement("canvas");
         canvas.id = "snowCanvas";
         document.body.appendChild(canvas);
 
@@ -8,8 +8,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0; 
-            pointer-events: none; 
+            z-index: -1;
+            pointer-events: none;
         `;
         canvas.setAttribute("style", canvasStyle);
 
@@ -29,12 +29,12 @@
             }
 
             reset() {
-                this.x = Math.random() * canvas.width; 
+                this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height; 
                 this.radius = Math.random() * 3 + 1; 
-                this.speed = Math.random() * 2 + 1; 
-                this.opacity = Math.random(); 
-                this.wind = (Math.random() - 0.5) * 0.5;
+                this.speed = Math.random() * 2 + 1;
+                this.opacity = Math.random();
+                this.wind = (Math.random() - 0.5) * 0.5; 
             }
 
             update() {
@@ -43,7 +43,7 @@
 
                 if (this.y > canvas.height) {
                     this.reset();
-                    this.y = 0; 
+                    this.y = 0;
                 }
             }
 
@@ -76,10 +76,12 @@
         window.addEventListener("resize", resizeCanvas);
 
         document.addEventListener("DOMContentLoaded", () => {
+            
             const bodyStyle = `
                 position: relative;
-                background: #111111; 
-                overflow: hidden; 
+                background: #111111;
+                color: #fff; 
+                overflow: auto;
             `;
             document.body.setAttribute("style", bodyStyle);
         });
