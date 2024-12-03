@@ -79,7 +79,6 @@
             
             const bodyStyle = `
                 position: relative;
-                background: #111111;
                 color: #fff; 
                 overflow: auto;
             `;
