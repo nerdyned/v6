@@ -8,8 +8,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0; /* Place above background but below content */
-            pointer-events: none; /* Allow clicks through the canvas */
+            z-index: 0; 
+            pointer-events: none; 
         `;
         canvas.setAttribute("style", canvasStyle);
 
