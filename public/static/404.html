@@ -138,22 +138,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="/js/settings/themes.js" defer></script>
 
     <!-- Ultraviolet Scripts -->
-    <script>
-    function registerProxy() {
+<script>
+  function registerProxy() {
     if (window.self !== window.top) {
-      
+    
       window.parent.postMessage({ action: "reload" }, "*");
     } else {
       location.reload();
     }
   }
-
-  window.addEventListener("message", (event) => {
-
-    if (event.data.action === "reload") {
-      location.reload(); 
-    }
-  });
 </script>
 
     <script src="/uv/uv.bundle.js"></script>
