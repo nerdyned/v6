@@ -139,22 +139,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="/js/settings/themes.js" defer></script>
 
     <!-- Ultraviolet Scripts -->
- <script>
+<script>
   function registerProxy() {
-    if (window.self !== window.top) {
-     
-      window.parent.postMessage({ action: "alert" }, "*");
-    } else {
-      alert("Service has been Registered, Please refresh the page now!");
-    }
+    alert("Service has been Registered, Please refresh the page now!");
   }
-
-  window.addEventListener("message", (event) => {
-
-    if (event.data.action === "alert") {
-      alert("Service has been Registered, Please refresh the page now!");
-    }
-  });
 </script>
 
     <script src="/uv/uv.bundle.js"></script>
