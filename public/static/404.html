@@ -129,11 +129,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="/js/settings/themes.js" defer></script>
 
     <!-- Ultraviolet Scripts -->
-    <script>
-    function registerProxy() {
+   <script>
+  function registerProxy() {
+    if (window.self !== window.top) {
+      
+      window.parent.location.reload();
+    } else {
+      
       location.reload();
     }
-    </script>
+  }
+</script>
     <script src="/uv/uv.bundle.js"></script>
     <script src="/uv/uv.config.js"></script>
     <script src="/uv/register-sw.js"></script>
