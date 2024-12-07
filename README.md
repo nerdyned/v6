@@ -5,7 +5,7 @@
 </p>
 
 ---
-<p align="center">PLEXILE ARCADE is by far The Next Generation Of <strong>Unblocked</strong> Games..</p>
+<p align="center">[PLEXILE ARCADE](https://plexilearcade.xyz) focuses on <strong>Unblocking</strong> the School Systems so Students can make School worthwhile.</p>
 
 ---
 
