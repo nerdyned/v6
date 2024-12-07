@@ -1,7 +1,7 @@
 <p align="center">
     <img src="/public/images/plexilearcadebanner.png" alt="PLEXILE ARCADE" style="border-radius: 50%; height: 150px;">
 </p>
-<p align="center">PLEXILE ARCADE focuses on <strong>Unblocking</strong> the School Systems so Students can make School worthwhile.</p>
+<p align="center">The Next Generation of <strong>Unblocked</strong> Games...</p>
 
 ---
 
