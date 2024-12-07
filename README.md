@@ -5,7 +5,7 @@
 </p>
 
 ---
-<p align="center">[PLEXILE ARCADE](https://plexilearcade.xyz) focuses on <strong>Unblocking</strong> the School Systems so Students can make School worthwhile.</p>
+<p align="center">PLEXILE ARCADE focuses on <strong>Unblocking</strong> the School Systems so Students can make School worthwhile.</p>
 
 ---
 
