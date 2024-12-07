@@ -1,6 +1,17 @@
 <p align="center">
    <img src="/public/images/plexilearcadebanner.png" alt="PLEXILE ARCADE" style="border-radius: 50%; width: 860px;height: auto;">
 </p>
+<p align="center">
+  <a href="https://github.com/willoo0/v6/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/willoo0/v6" alt="contributors" />
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/willoo0/v6" alt="commits" />
+  </a>  
+  <a href="https://github.com/willoo0/v6/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/willoo0/awesome-readme-template.svg" alt="license" />
+  </a>
+</p>
 
 ---
 
@@ -17,7 +28,7 @@ Deploy PLEXILE ARCADE with your preferred platform:
 ```
 git clone https://github.com/PLEXILENetwork/v6
 ```
-```
+```sh
 cd v6
 ```
 ```
