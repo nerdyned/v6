@@ -5,7 +5,7 @@
 </p>
 
 ---
-<p align="center">The Next Generation Of <strong>Unblocked</strong> Games..</p>
+<p align="center">PLEXILE ARCADE is by far The Next Generation Of <strong>Unblocked</strong> Games..</p>
 
 ---
 
