@@ -1,8 +1,10 @@
 <p align="center">
   <kbd>
-    <img src="/public/images/plexilearcade.png" alt="PLEXILE ARCADE" style="border-radius: 50%; height: 150px;">
+    <img src="/public/images/plexilearcadebanner.png" alt="PLEXILE ARCADE" style="border-radius: 50%; height: 150px;">
   </kbd>
 </p>
+
+---
 
 <p align="center">The Next Generation Of <strong>Unblocked</strong> Games..</p>
 
@@ -32,14 +34,8 @@ Deploy PLEXILE ARCADE with your preferred platform:
   </a>
 </p>
 
-## Terms of Service
-
-It is important to understand the PLEXILE ARCADE Terms of Service to avoid any violations. You can view the TOS [here](https://plexilearcade.xyz/termsofservice.html).
+---
 
 ## License
 
-For details on licensing, please refer to the [LICENSE](./LICENSE) file.
-
-## Credits
-
-PLEXILE ARCADE was created by [PLEXILE Network](https://github.com/PLEXILENetwork) As an Unlocked Game Website. Full credits can be found in [CREDITS.md](./CREDITS.md).
+PLEXILE ARCADE is protected with copyright using the MIT [LICENSE](./LICENSE)
