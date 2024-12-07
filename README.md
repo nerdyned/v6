@@ -31,4 +31,4 @@ node index.js
 
 ## License
 
-PLEXILE ARCADE is protected by copyright using the MIT [LICENSE](./LICENSE)
+PLEXILE ARCADE is protected by copyright using the [Apache License 2.0](./LICENSE)
