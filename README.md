@@ -32,10 +32,10 @@ git clone https://github.com/PLEXILENetwork/v6
 cd v6
 ```
 ```
-npm install
+npm i
 ```
 ```
-node index.js
+node index.mjs
 ```
 
 ---
