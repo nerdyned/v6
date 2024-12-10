@@ -1,69 +1,101 @@
- function erudaToggle() {
-    const proccy = document.getElementById('iframeId');
-    if (!proccy) return;
+document.getElementById("homeBox").addEventListener("click", function () {
+  window.location.href = "/";
+});
 
-    const proccyWindow = proccy.contentWindow;
-    const proccyDocument = proccy.contentDocument;
-
-    if (!proccyWindow || !proccyDocument) return;
-
-    if (proccyWindow.eruda?._isInit) {
-      proccyWindow.eruda.destroy();
-    } else {
-      let script = proccyDocument.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/eruda';
-      script.onload = function () {
-        if (!proccyWindow) return;
-        proccyWindow.eruda.init();
-        proccyWindow.eruda.show();
-      };
-      proccyDocument.head.appendChild(script);
+document.getElementById("fullscreenBox").addEventListener("click", function () {
+  const activeIframe = document.querySelector(".frameWeb iframe.active"); 
+  if (activeIframe) {
+    if (activeIframe.requestFullscreen) {
+      activeIframe.requestFullscreen();
+    } else if (activeIframe.mozRequestFullScreen) {
+      activeIframe.mozRequestFullScreen();
+    } else if (activeIframe.webkitRequestFullscreen) {
+      activeIframe.webkitRequestFullscreen();
+    } else if (activeIframe.msRequestFullscreen) {
+      activeIframe.msRequestFullscreen();
     }
+  } else {
+    console.error("No active iframe found for fullscreen.");
   }
+});
 
-  function goFullscreen() {
-    const iframe = document.getElementById('iframeId');
-    if (iframe.requestFullscreen) {
-      iframe.requestFullscreen();
-    } else if (iframe.mozRequestFullScreen) {
-      iframe.mozRequestFullScreen();
-    } else if (iframe.webkitRequestFullscreen) {
-      iframe.webkitRequestFullscreen();
-    } else if (iframe.msRequestFullscreen) {
-      iframe.msRequestFullscreen();
-    }
-  }
+document.getElementById("searchBox").addEventListener("click", function () {
+  document.getElementById("searchOverlay").style.display = "flex";
+});
 
-const searchIcon = document.querySelector('.bx-search');
-const overlay = document.getElementById('searchOverlay');
-const searchBar = document.getElementById('uv-address');
-const closeBtn = document.getElementById('closeOverlayBtn');
+document.getElementById("closeOverlayBtn").addEventListener("click", function () {
+  document.getElementById("searchOverlay").style.display = "none";
+});
+
+document.getElementById("codeBox").addEventListener("click", function () {});
+
+const searchIcon = document.querySelector(".bx-search");
+const overlay = document.getElementById("searchOverlay");
+const searchBar = document.getElementById("uv-address");
+const closeBtn = document.getElementById("closeOverlayBtn");
 
 function openSearch() {
-  overlay.classList.add('show'); 
-  searchBar.classList.add('visible'); 
-  searchBar.focus();  
+  overlay.classList.add("show");
+  searchBar.classList.add("visible");
+  searchBar.focus();
 }
 
-searchIcon.addEventListener('click', openSearch);
+searchIcon.addEventListener("click", openSearch);
 
-closeBtn.addEventListener('click', function() {
-  overlay.classList.remove('show');
-  searchBar.classList.remove('visible');
+closeBtn.addEventListener("click", function () {
+  overlay.classList.remove("show");
+  searchBar.classList.remove("visible");
 });
 
-document.addEventListener('click', function (event) {
-
-  if (overlay.classList.contains('show') && !overlay.contains(event.target) && event.target !== searchIcon) {
-    overlay.classList.remove('show');
-    searchBar.classList.remove('visible');
+document.addEventListener("click", function (event) {
+  if (
+    overlay.classList.contains("show") &&
+    !overlay.contains(event.target) &&
+    event.target !== searchIcon
+  ) {
+    overlay.classList.remove("show");
+    searchBar.classList.remove("visible");
   }
 });
 
-overlay.addEventListener('click', function (event) {
-  event.stopPropagation();  
+overlay.addEventListener("click", function (event) {
+  if (event.target === overlay) {
+    toggleSearchOverlay();
+  }
+  event.stopPropagation();
 });
 
-searchBar.addEventListener('click', function (event) {
-  event.stopPropagation();  
+searchBar.addEventListener("click", function (event) {
+  event.stopPropagation();
 });
+
+function toggleSearchOverlay() {
+  overlay.classList.toggle("show");
+  const searchBarElement = document.querySelector(".search-bar");
+  searchBarElement.classList.toggle("visible");
+}
+
+closeBtn.addEventListener("click", function (event) {
+  event.stopPropagation();
+  toggleSearchOverlay();
+});
+
+document.getElementById("codeBox").addEventListener("click", () => {
+  if (window.eruda && window.eruda._isInit) {
+  
+    window.eruda.destroy();
+    console.log("Eruda destroyed");
+  } else {
+    
+    const erudaScript = document.createElement("script");
+    erudaScript.src = "https://cdn.jsdelivr.net/npm/eruda";
+    document.body.appendChild(erudaScript);
+
+    erudaScript.onload = () => {
+      
+      window.eruda.init();
+      window.eruda.show();
+      console.log("Eruda initialized and shown");
+     };
+   }
+ });
