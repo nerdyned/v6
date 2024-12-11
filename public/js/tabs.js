@@ -26,51 +26,57 @@ function addTab(url = "/proxy.html") {
   tab.className = "tab";
   tab.dataset.url = absoluteUrl;
   tab.dataset.title = "Loading...";
-  
+
   const favicon = document.createElement("img");
   favicon.src = `https://www.google.com/s2/favicons?domain=${new URL(absoluteUrl).hostname}`;
   favicon.style.width = "20px";
   favicon.style.height = "20px";
   favicon.style.marginRight = "3px";
-  
+
   tab.style.display = "flex";
-  tab.style.alignItems = "center"; 
-  
+  tab.style.alignItems = "center";
+
   const title = document.createElement("span");
   title.className = "tab-title";
   title.textContent = tab.dataset.title;
-  title.style.whiteSpace = "nowrap";  
-  title.style.overflow = "hidden";   
-  title.style.textOverflow = "ellipsis"; 
-  title.style.fontSize = "15px"; 
-  title.style.textAlign = "left";  
-  
+  title.style.whiteSpace = "nowrap";
+  title.style.overflow = "hidden";
+  title.style.textOverflow = "ellipsis";
+  title.style.fontSize = "15px";
+  title.style.textAlign = "left";
+
   const closeBtn = document.createElement("i");
   closeBtn.className = "bx bx-x close-btn";
   closeBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     removeTab(tab, iframe);
   });
-  
+
   tab.appendChild(favicon);
   tab.appendChild(title);
   tab.appendChild(closeBtn);
-  
+
   tabsContainer.appendChild(tab);
-  tabs.push({ tab, iframe });  
+  tabs.push({ tab, iframe });
 
   selectTab(tab);
   updateTabLimit();
 
   iframe.onload = () => {
     try {
-      const pageTitle = iframe.contentDocument.title || new URL(absoluteUrl).hostname;
+      const newDomain = new URL(iframe.contentWindow.location.href).hostname;
+      const pageTitle = iframe.contentDocument.title || newDomain;
+
+      tab.dataset.url = iframe.contentWindow.location.href;
       tab.dataset.title = pageTitle;
+
       title.textContent = pageTitle;
+      favicon.src = `https://www.google.com/s2/favicons?domain=${newDomain}`;
     } catch {
-      const fallbackTitle = new URL(absoluteUrl).hostname;
-      tab.dataset.title = fallbackTitle;
-      title.textContent = fallbackTitle;
+      const fallbackDomain = new URL(absoluteUrl).hostname;
+      tab.dataset.title = fallbackDomain;
+      title.textContent = fallbackDomain;
+      favicon.src = `https://www.google.com/s2/favicons?domain=${fallbackDomain}`;
     }
   };
 }
@@ -122,35 +128,6 @@ tabsContainer.addEventListener("click", (e) => {
 
 addTabBox.addEventListener("click", () => addTab());
 
-function enableDragAndDrop() {
-  let draggedTab = null;
-
-  tabsContainer.addEventListener("dragstart", (e) => {
-    const tab = e.target.closest(".tab"); 
-    if (!tab) return;
-    draggedTab = tab;
-    draggedTab.classList.add("dragging");
-  });
-
-  tabsContainer.addEventListener("dragover", (e) => {
-    e.preventDefault();
-    const afterTab = getDragAfterTab(tabsContainer, e.clientY);
-    if (afterTab == null) {
-      tabsContainer.appendChild(draggedTab);
-    } else {
-      tabsContainer.insertBefore(draggedTab, afterTab);
-    }
-  });
-
-  tabsContainer.addEventListener("dragend", () => {
-    if (draggedTab) {
-      draggedTab.classList.remove("dragging");
-      updateTabOrder();
-      draggedTab = null;
-    }
-  });
-}
-
 function getDragAfterTab(container, y) {
   const draggableTabs = [...container.querySelectorAll(".tab:not(.dragging)")];
 
@@ -176,5 +153,4 @@ function updateTabOrder() {
 
 
 addTab();
-enableDragAndDrop();
 updateTabLimit();
