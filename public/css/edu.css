@@ -282,9 +282,10 @@ iframe {
 
 .frameWeb iframe {
   display: none;
-  width: calc(165vh - 0px);
-  height: calc(100vh - 0px);
+  width: calc(100vw - 250px);
+  height: 100vh;
   border: none;
+  top: 0;
 }
 
 .frameWeb iframe.active {
