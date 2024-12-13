@@ -1,45 +1,45 @@
 <p align="center">
-  <kbd>
-    <img src="/public/images/plexilearcade.png" alt="PLEXILE ARCADE" style="border-radius: 50%; height: 150px;">
-  </kbd>
+   <img src="/public/images/plexilearcadebanner.png" alt="PLEXILE ARCADE" style="border-radius: 50%; width: 860px;height: auto;">
 </p>
-
-<p align="center">The Next Generation Of <strong>Unblocked</strong> Games..</p>
+<p align="center">
+  <a href="https://github.com/willoo0/v6/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/willoo0/v6" alt="contributors" />
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/willoo0/v6" alt="commits" />
+  </a>  
+  <a href="https://github.com/willoo0/v6/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/willoo0/awesome-readme-template.svg" alt="license" />
+  </a>
+</p>
 
 ---
 
 ## What is PLEXILE ARCADE?
 
-**PLEXILE ARCADE** is a Unblocked Game Website with Games, Apps, & A Proxy. It is Developed and Owned by [PLEXILE Network](https://github.com/PLEXILENetwork).
+**PLEXILE ARCADE** is an Unblocked Website dedicated to Unblocking the School Systems!
 
 ![PLEXILE ARCADE Demo](/public/images/PLEXILEARCADE.gif)
 
-## Hosting
-
-> [!IMPORTANT]  
-> PLEXILE ARCADE uses an Unblocker, which may not be compatible with all hosting providers.
+## Setup
 
 Deploy PLEXILE ARCADE with your preferred platform:
 
-  <a href="https://vercel.com/new/clone?repository-url=https://replit.com/github/PLEXILENetwork/v6" target="_blank">
-    <img src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg" alt="Deploy to Vercel">
-  </a>
-  <a href="https://app.netlify.com/start/deploy?repository=https://github.com/PLEXILENetwork/v6" target="_blank">
-    <img src="https://binbashbanana.github.io/deploy-buttons/buttons/official/netlify.svg" alt="Deploy to Netlify">
-  </a>
-  <a href="https://render.com/deploy?repo=https://github.com/PLEXILENetwork/v6" target="_blank">
-    <img src="https://binbashbanana.github.io/deploy-buttons/buttons/official/render.svg" alt="Deploy to Render">
-  </a>
-</p>
+```
+git clone https://github.com/PLEXILENetwork/v6
+```
+```sh
+cd v6
+```
+```
+npm i
+```
+```
+node index.mjs
+```
 
-## Terms of Service
-
-It is important to understand the PLEXILE ARCADE Terms of Service to avoid any violations. You can view the TOS [here](https://plexilearcade.xyz/termsofservice.html).
+---
 
 ## License
 
-For details on licensing, please refer to the [LICENSE](./LICENSE) file.
-
-## Credits
-
-PLEXILE ARCADE was created by [PLEXILE Network](https://github.com/PLEXILENetwork) As an Unlocked Game Website. Full credits can be found in [CREDITS.md](./CREDITS.md).
+PLEXILE ARCADE is protected by copyright using the [Apache License 2.0](./LICENSE)

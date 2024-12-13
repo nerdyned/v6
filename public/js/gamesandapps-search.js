@@ -1,5 +1,4 @@
 window.onload = function() {
-    // This the Notification JS (:<<<<<<
     const notification = document.getElementById('notification');
     const closeBtn = document.getElementById('close-notification');
     const sound = document.getElementById('notification-sound');
@@ -13,7 +12,7 @@ window.onload = function() {
         notification.style.right = '-320px';
     });
 
-// This the Search JS (THIS A SECRET TEXT, SCREENSHOT NOWWWWW!!!)
+// (THIS A SECRET TEXT, SCREENSHOT NOWWWWW!!!)
   document.getElementById('searchInput').addEventListener('keyup', function() {
         let filter = this.value.toLowerCase();
         let boxes = document.getElementById('boxContainer').getElementsByClassName('box');
