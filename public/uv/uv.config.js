@@ -1,7 +1,7 @@
 // DO NOT Use My Bare
 self.__uv$config = {
     prefix: '/static/pa/',
-    bare: 'https://funanimals.vercel.app/fq/',
+    bare: 'https://holyholyjoinmepop234567-production.up.railway.app/bare/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/uv/uv.handler.js',
