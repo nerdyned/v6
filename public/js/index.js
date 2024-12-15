@@ -70,14 +70,12 @@ form.addEventListener('submit', async event => {
     }).then(() => {
         let url = input.value.trim();
         
-        const shortcutKey = url.split(" ")[0]; 
+        const shortcutKey = url.split(" ")[0].toLowerCase(); 
         if (shortcuts[shortcutKey]) {
             url = shortcuts[shortcutKey]; 
         } else if (!isUrl(url)) {
-        
             url = 'https://www.google.com/search?q=' + url;
         } else if (!(url.startsWith('https://') || url.startsWith('http://'))) {
-           
             url = 'http://' + url;
         }
 
