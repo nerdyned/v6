@@ -11,6 +11,8 @@ const shortcuts = {
     "!li": "https://www.linkedin.com",
 
     "!pa": "https://plexilearcade.xyz",
+    "!jmw": "https://jmwubg.xyz",
+    "!a1r": "https://a1rplayis.us",
     "!xn": "https://xenapsis.dev",
     "!cg": "https://crazygames.com",
     "!p": "https://poki.com",
